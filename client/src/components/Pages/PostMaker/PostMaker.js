@@ -232,7 +232,7 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
                 <div className='buttons'>
                   
                   <button type="button"  onClick={clear}>Clear</button>
-                  <button type="submit" disabled={postData.title===''|| postData.des===''}>{currentId? 'Update': 'Submit'}</button>
+                  <button type="submit" disabled={postData.title===''|| postData.des===''||postData.cat===''}>{currentId? 'Update': 'Submit'}</button>
                   {currentId&&<button type="button"  onClick={CancelUpdate}>Cancel update</button> }
                   </div>
 

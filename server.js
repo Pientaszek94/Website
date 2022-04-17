@@ -6,6 +6,7 @@ import  postRoutes  from './routes/posts.js';
 import downloadRoute from './routes/download.js';
 import usersRoutes from './routes/users.js';
 import path from 'path';
+import res from 'express/lib/response';
 const app=express();
 
 app.use(bodyParser.json({limit:"30mb", extended: true}))
@@ -30,6 +31,7 @@ if(process.env.NODE_ENV==='production')
 {
     //Set static folder
     app.use(express.static('client/build'));
+    res.sendFile(path.resolve(__dirname+"app/client/build/index.html"))
 }
 
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:pwl1994@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})
