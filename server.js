@@ -23,7 +23,6 @@ app.get('/api', (req,res)=>{
 
 
 
-const CONNECTION_URL=process.env.MONGODB_URI||'mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT=process.env.PORT||5000;
 
 //Serve static assets if in production
@@ -33,6 +32,6 @@ if(process.env.NODE_ENV==='production')
     app.use(express.static('client/build'));
 }
 
-mongoose.connect(CONNECTION_URL, {useNewUrlParser:true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})
 .then(app.listen(PORT, ()=>console.log(`THE PORT ${PORT} IS RUNNING!`))).catch((error)=>console.log("YEP...WE ARE DOOMED...and here is what it caused:  ", error.message));
 
