@@ -104,7 +104,7 @@ const [match, setMatch]=useState("");
                                                 <div className>
                                                     <h4>Congrats! You have unlocked rare item!</h4>
                                                     {console.log()}
-                                                    <form action="http://localhost:5000/download/322" method="GET">
+                                                    <form action="http://localhost:5000/api/download/322" method="GET">
                                                         <input type="submit" value="Download my CV, please"/>
 
                                                     </form>
