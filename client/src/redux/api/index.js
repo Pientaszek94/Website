@@ -19,5 +19,5 @@ API.interceptors.request.use((req) => {
   export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
   export const deletePost = (id) => axios.delete(`${url}/${id}`);
 
-export const signIn=(formData)=> API.post('/api/users/signin', formData)
-export const signUp=(formData)=> API.post('/api/users/signup', formData)
+export const signIn=(formData)=> API.post('/users/signin', formData)
+export const signUp=(formData)=> API.post('/users/signup', formData)
