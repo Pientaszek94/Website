@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API=axios.create({baseURL: 'http://localhost:5000'});
+const API=axios.create({baseURL: 'https://pwlfrontdev.herokuapp.com/api'});
 
 
 API.interceptors.request.use((req) => {
@@ -11,7 +11,7 @@ API.interceptors.request.use((req) => {
     return req;
   });
 
-  const url = 'http://localhost:5000/api/posts';
+  const url = 'https://pwlfrontdev.herokuapp.com/api/posts';
 
   export const fetchPosts = () => axios.get(url);
   export const createPost = (newPost) => axios.post(url, newPost);
