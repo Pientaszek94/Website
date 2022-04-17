@@ -31,9 +31,9 @@ if(process.env.NODE_ENV==='production')
 {
     //Set static folder
     app.use(express.static('client/build'));
-    app.get("*", (req, res)=>{
-        res.sendFile(path.resolve(__dirname+"/client/build/index.html"))
-    })
+    // app.get("*", (req, res)=>{
+    //     res.sendFile(path.resolve(__dirname+"/client/build/index.html"))
+    // })
 }
 
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:pwl1994@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})
