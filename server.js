@@ -23,7 +23,7 @@ app.get('/api', (req,res)=>{
 
 
 
-const CONNECTION_URL='mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const CONNECTION_URL=process.env.MONGODB_URI||'mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT=process.env.PORT||5000;
 
 //Serve static assets if in production
