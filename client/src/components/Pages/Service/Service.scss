@@ -1,0 +1,52 @@
+.service{
+    margin: 0 10vw 0 10vw;
+}
+.quote-container{
+    width: 100vw;
+    height: 40vh;
+    overflow: hidden;
+    background-image: url('./sersynth.jpg');
+    background-size: cover;
+}
+
+
+.quote{
+    position: relative;
+    line-height: 2rem;
+    width: 200px;
+    word-wrap:break-word;
+
+    animation: quote 8s ease-in-out infinite ;
+    z-index: 1;
+}
+
+@keyframes quote {
+    //first blink
+    0%{
+        opacity: 0;
+        top: 0px;
+        left: 0px;
+    }
+    50%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        
+        opacity: 0;
+    }
+
+ 
+}
+
+@media screen and (max-width: 1300px){
+
+    .quote{
+        font-size: 2vw;
+        line-height: 2vw;
+        text-align: left;
+    }
+    
+}

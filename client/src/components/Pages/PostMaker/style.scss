@@ -1,0 +1,250 @@
+    .pm-container{
+        margin-bottom: 20px;
+   
+    }
+
+
+    h4{
+        text-align: center;
+    font-family: var(--comp-font);
+    font-size: 1em;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #ff0000;
+    line-height: 1.3rem;
+    }
+       
+
+   .sidebar{
+       position: fixed;
+       top: 80px;
+       left: 0;
+       width: 30vw;
+        background-color: black;
+        opacity: 0.9;
+        z-index: 99;
+        border: 1px solid white;
+      
+   }     
+   
+   .sidebar-off{
+    position: fixed;
+    top: 80px;
+    left: -80vw;
+    width: 30vw;
+     background-color: black;
+     opacity: 0.9;
+     z-index: 99;
+     border: 1px solid white;
+   }
+
+
+
+   .klikadlo-off, .klikadlo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       width: 2em;
+       height: 100px;
+       background-color: black;
+       
+       position: fixed;
+       top: 80px;
+        opacity: 1;
+        z-index: 99;
+        cursor: pointer;
+
+        span{
+            transform: rotate(90deg);
+            font: 24px FreeMono,monospace;
+        }
+   }
+
+   .klikadlo{
+    left: 30vw;
+    border: 1px solid white;
+    border-left: 1px solid black;
+            }
+
+    .klikadlo-off{
+        left: 0;
+        border: 1px solid white;
+                }
+
+   .sidebar-content{
+       width: inherit;
+       height: 80vh;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    
+       input{
+           background-color: inherit;
+           width: 30vw;
+           color: white;
+           border: none;
+           border-bottom: 2px solid white;
+           margin-top: 20px;
+           font: 15px FreeMono,monospace;
+           &:focus-visible{ 
+               outline: none;
+               border: none;
+               border-bottom: 3px solid red; 
+           }
+
+       }
+       .posts-list{
+           list-style-type: none;
+           padding: 0;
+           li{
+               margin: 0.3em;
+             
+           }
+
+       }
+     
+    }
+
+
+    .confirm-banner{
+        position: fixed;
+        z-index: 100;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    .banner{
+        width: fit-content;
+        width: fit-content;
+        background-color: red;
+        opacity: 1;
+        padding: 20px;
+        border: 2px solid white;
+    }
+    
+
+
+    .postmaker{text-align: center;
+    font-family: var(--comp-font);
+    font-size: 1.5em;
+    width: 80vw;
+    margin: 0 auto 0 auto;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #ff0000;
+    line-height: 40px;
+    border: 4px solid white;
+
+    }
+
+
+    form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    }
+
+    .img-seeker{
+    align-items: center;
+    width: 50vw;
+    }
+
+                .para-form{
+                width: 80vw;
+                border: 3px solid white;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                
+                .article-container{
+                width: 60vw;
+                text-align: justify;
+
+
+
+                .para-title{
+                text-align: center;
+                font-family: var(--comp-font);
+                font-size: 2vh;
+                color: white;
+                text-transform: uppercase;
+                
+            }
+
+
+
+
+
+                .article-para{
+                font: 15px FreeMono,monospace;
+                font-weight: light;
+                line-height: 15px;
+                color: white;
+                text-align: justify;
+                            }
+                                    }
+                            }
+
+.textarea{
+    min-height: 20px;
+    min-width: 30vw;
+    line-height: 100%;
+   
+
+                }
+
+.radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    span{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px;
+        input{
+            
+        margin-right: 0;
+        padding: 0;
+        display: inline;
+        width: 22px;
+        font: 3rem;
+            }
+        font: 20px FreeMono,monospace;
+        }
+}
+
+
+
+
+
+.new-para-btn{
+    text-align: center;
+}
+
+
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.sidebar-btn{
+    margin: 10px;
+    width: 100px;
+}
+
+

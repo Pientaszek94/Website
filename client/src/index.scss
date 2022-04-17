@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Press+Start+2P&display=swap');
+
+
+:root {
+    --comp-font: 'Press Start 2P', cursive;
+    --barcode-font: 'Libre Barcode 39', cursive;
+    --normal-font: 15px FreeMono ,monospace;
+    --grtng:'Outfit', sans-serif;
+    --cyb-grtng:  'Press Start 2P', cursive;
+}
+
+body{
+    background-color: rgb(3, 1, 29);
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 5px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  input, textarea{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    background-color: inherit;
+    border: 2px solid white;
+    color: white;
+    text-align: start;
+    max-width: 98%;
+    font: var(--normal-font);
+
+    &:focus-visible{
+      outline: 4px solid red;
+  }
+  }
+
+  button{
+    max-width: 12em;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    font: 15px FreeMono ,monospace;;
+    margin: 0 6px 0 6px;
+    cursor: pointer;
+    @media screen and (max-width: 1200px) {
+    }
+
+    &:disabled{
+        opacity: 0.3;
+    
+    }}
+
+
+    p{
+      font: var(--normal-font);
+      margin-left: auto;
+      margin-right: auto;
+    }
