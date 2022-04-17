@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import  postRoutes  from './routes/posts.js';
 import downloadRoute from './routes/download.js';
 import usersRoutes from './routes/users.js';
-const path=require('path');
+import path from 'path';
 const app=express();
 
 app.use(bodyParser.json({limit:"30mb", extended: true}))
@@ -23,17 +23,14 @@ app.get('/api', (req,res)=>{
 
 
 
-const CONNECTION_URL=process.env.MONGODB_URI||'mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const CONNECTION_URL='mongodb+srv://pawel123:Kaszka123@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT=process.env.PORT||5000;
 
 //Serve static assets if in production
 if(process.env.NODE_ENV==='production')
 {
     //Set static folder
-    app.use(express.static(path.join(__dirname, 'client', 'build')));
-    app.get('/*', (req, res)=>{
-         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-    })
+    app.use(express.static('client/build'));
 }
 
 mongoose.connect(CONNECTION_URL, {useNewUrlParser:true, useUnifiedTopology: true})
