@@ -104,7 +104,7 @@ const [match, setMatch]=useState("");
                                                 <div className>
                                                     <h4>Congrats! You have unlocked rare item!</h4>
                                                     {console.log()}
-                                                    <form action="https://pwlfrontdev.herokuapp.com/api/download/322" method="GET">
+                                                    <form action="https://pwlfrontdev.herokuapp.com/api/download/pack" method="GET">
                                                         <input type="submit" value="Download my CV, please"/>
 
                                                     </form>

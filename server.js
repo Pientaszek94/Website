@@ -34,11 +34,9 @@ const PORT=process.env.PORT||5000;
 // }
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('/client/build'));
+    app.use(express.static('client/build'));
     
-    app.get('*', (req, res) => {
-      res.sendFile('/client/build/index.html');
-    });
+
 }
 
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:pwl1994@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})

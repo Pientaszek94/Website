@@ -4,7 +4,7 @@ const downloadRoute=express.Router();
 
 
 //CV
-downloadRoute.get('/322', (req,res)=>{
+downloadRoute.get('/pack', (req,res)=>{
     res.download(__dirname+`dlc/padaka.pdf`)
 })
 
