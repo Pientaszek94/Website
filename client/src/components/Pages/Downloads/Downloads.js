@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './Downloads.scss'
 import {Canvas, useFrame} from "@react-three/fiber";
-
+import download from 'downloadjs'
 
 
 const Box=(props)=>{
@@ -104,10 +104,14 @@ const [match, setMatch]=useState("");
                                                 <div className>
                                                     <h4>Congrats! You have unlocked rare item!</h4>
                                                     {console.log()}
-                                                    <form action="https://pwlfrontdev.herokuapp.com/api/download/pack" method="GET">
-                                                        <input type="submit" value="Download my CV, please"/>
+                                        
+                                                        <button type="button" onClick={async()=>{
+                                                            const res= await fetch('/api/download');
+                                                            const blob= await res.blob();
+                                                            download(blob, 'padaka.pdf');
+                                                        }}/>
 
-                                                    </form>
+                                                    
                                                 </div>
                                             }
                                             {

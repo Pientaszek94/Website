@@ -11,7 +11,8 @@ export const signIn=(FormData, navigate)=> async(dispatch)=>{
         dispatch({type: "AUTH", data })
         
         console.log("zalogowany");
-        navigate('/postmaker')
+
+        navigate('/')
 
     } catch (error) {
         console.log(error)
@@ -25,7 +26,7 @@ export const signUp=(FormData, navigate)=> async(dispatch)=>{
         const {data}=await api.signUp(FormData);
         dispatch({type: "AUTH", data })
         console.log("New user is registered")
-        navigate('/service')
+        navigate('/postmaker')
         
     } catch (error) {
         console.log(error)
