@@ -28,7 +28,7 @@ const [formData, setFormData]=useState(initialState);
 
   const handleChange=(e)=>{
 
-    setFormData({...formData, [e.target.name]: e.target.value.replace("<script>", 'OH NO you dont')})
+    setFormData({...formData, [e.target.name]: e.target.value.replace('<script>', 'You wont do this NOPE')})
     
   }
 

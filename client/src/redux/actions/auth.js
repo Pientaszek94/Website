@@ -1,4 +1,5 @@
 import * as api from '../api/index'
+import emailjs from '@emailjs/browser';
 
 
 
@@ -11,6 +12,7 @@ export const signIn=(FormData, navigate)=> async(dispatch)=>{
         
         console.log("zalogowany");
         navigate('/postmaker')
+
     } catch (error) {
         console.log(error)
     }

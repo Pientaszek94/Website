@@ -10,7 +10,9 @@
     "install-client":"cd client && npm install",
     "client": "cd client && npm start",
     "dev": "concurrently -n 'server,client' -c 'blue,gray' \"nodemon server.js\" \"npm run client\"",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "commit":"git add . && git commit -am \"masterro\"",
+    "push": "npm run commit && git push heroku master"
   },
   "author": "",
   "license": "ISC",
