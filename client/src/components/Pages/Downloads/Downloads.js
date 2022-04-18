@@ -109,7 +109,7 @@ const [match, setMatch]=useState("");
                                                             const res= await fetch('/api/download');
                                                             const blob= await res.blob();
                                                             download(blob, 'padaka.pdf');
-                                                        }}/>
+                                                        }} > Please, Download my CV but it may take a while</button>
 
                                                     
                                                 </div>
