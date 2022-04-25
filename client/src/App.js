@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Home from './components/Pages/HOME/Home';
 import Navbar from './components/Parts/Navbar/Navbar'
@@ -19,6 +19,9 @@ function App() {
 
   /*behold my paths*/
 
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  }, [])
   
   return (
     

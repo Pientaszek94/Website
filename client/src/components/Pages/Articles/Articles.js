@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Suspense} from 'react'
 import './Articles.scss'
 import {useSelector} from 'react-redux'
-import Post from '../../Parts/Post/Post'
+
 import {useDispatch} from "react-redux"
 import { getPosts } from '../../../redux/actions/posts'
 
@@ -14,7 +14,7 @@ function Articles() {
     document.title="Pwl => Articles";
 
 
- 
+    const Post=React.lazy(()=> import('./Post/Post'))
 
     const [klik, setKlik]=useState(false)
     const [search, setSearch]=useState('');
@@ -27,7 +27,7 @@ function Articles() {
 
     useEffect(()=>{
       dispatch(getPosts(posts))
-    })
+    }, [posts])
 
 
     const clickSM=()=>{
@@ -60,9 +60,11 @@ function Articles() {
                                       }                   
                                     ).sort((a, b)=> a._id<b._id ? 1 : -1).map((post)=>{
                             return(
-                                    
+                                    <Suspense fallback={<div>LOADING Articles</div>}>
+                                      <Post post={post} key={post._id}/>
+
+                                    </Suspense>
                                    
-                                    <Post post={post} key={post._id}/>
                             
                             )
                         })

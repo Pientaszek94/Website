@@ -7,7 +7,7 @@
 :root {
     --comp-font: 'Press Start 2P', cursive;
     --barcode-font: 'Libre Barcode 39', cursive;
-    --normal-font: 15px FreeMono ,monospace;
+    --normal-font: 20px FreeMono ,monospace;
     --grtng:'Outfit', sans-serif;
     --cyb-grtng:  'Press Start 2P', cursive;
 }
@@ -41,7 +41,7 @@ body{
   }
 
   input, textarea{
-    font-size: 1.1em;
+    font-size: 20px;
     margin-bottom: 10px;
     background-color: inherit;
     border: 2px solid white;
@@ -60,11 +60,11 @@ body{
     background-color: black;
     color: white;
     border: 1px solid white;
-    font: 15px FreeMono ,monospace;;
+    font: 20px FreeMono ,monospace;
     margin: 0 6px 0 6px;
     cursor: pointer;
-    @media screen and (max-width: 1200px) {
-    }
+    overflow: hidden;
+   
 
     &:disabled{
         opacity: 0.3;
@@ -72,8 +72,130 @@ body{
     }}
 
 
+
+    .klikadlo-off, .klikadlo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     width: 2em;
+     height: 100px;
+     background-color: black;
+     
+     position: fixed;
+     top: 100px;
+      opacity: 1;
+      z-index: 99;
+      cursor: pointer;
+  
+      span{
+          transform: rotate(90deg);
+          font: 24px FreeMono,monospace;
+      }
+  }
+  
+  .klikadlo{
+  left: 30vw;
+  border: 1px solid white;
+  border-left: 1px solid black;
+          }
+  
+  .klikadlo-off{
+      left: 0;
+      border: 1px solid white;
+              }
+
+
+
+
+    h1{
+      text-align: center;
+      font-family: var(--comp-font);
+      color: white;
+      text-transform: uppercase;
+      text-shadow: 3px 3px #ff0000;
+      line-height: 40px;
+      border: 4px solid white;
+      padding-bottom: 10px;
+      padding-top: 10px;
+  
+          @media screen and (max-width: 1200px) {
+          font-size: 20px;
+          line-height: 30px;
+          
+          }
+  }
+
+  h4 {
+    font-family: var(--comp-font);
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #ff0000;
+    line-height: 25px;
+    @media screen and (max-width: 1200px) {
+      font-size: 17px;
+      line-height: 25px;
+      
+      }
+    } 
+
+    h6{
+      font-family: var(--cyb-grtng);
+    }
+
+
     p{
       font: var(--normal-font);
       margin-left: auto;
       margin-right: auto;
     }
+
+    @media screen and (max-width: 1300px) {
+
+      :root{
+        --normal-font: 12px FreeMono ,monospace;
+      }
+
+
+      input, textarea{
+        font-size: 20px;
+        margin-bottom: 10px;
+        background-color: inherit;
+        border: 2px solid white;
+        color: white;
+        text-align: start;
+        max-width: 98%;
+        font: var(--normal-font);
+    
+        &:focus-visible{
+          outline: 4px solid red;
+      }
+
+      
+
+
+      }
+    
+      button{
+        max-width: 24vw;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        font: 17px FreeMono ,monospace;
+        margin: 0 6px 0 6px;
+        cursor: pointer;
+        
+    
+        &:disabled{
+            opacity: 0.3;
+        
+        }}
+    
+     
+        p{
+          font: var(--normal-font);
+          margin-left: auto;
+          margin-right: auto;
+        }
+    
+    }
+   

@@ -2,7 +2,8 @@ import React, {useEffect, useRef, useState} from 'react'
 import './style.scss'
 import {useDispatch, useSelector} from 'react-redux'
 import {createPost, deletePost, getPosts, updatePost} from '../../../redux/actions/posts.js'
-import FileBase from 'react-file-base64'
+//  import FileBase from 'react-file-base64'
+import imageCompression from 'browser-image-compression'
 
 function PostMaker() {
 
@@ -22,7 +23,7 @@ function PostMaker() {
   const [paragraph, setParagraph]=useState("");
   const [search, setSearch]=useState('');
   const [currentId, setCurrentId]=useState(null);
-  const [klik, setKlik]=useState(false)
+  const [klik, setKlik]=useState(false);
   const user = JSON.parse(localStorage.getItem('profile'))!==null? JSON.parse(localStorage.getItem('profile')): null;
 
 
@@ -54,6 +55,7 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
 
           dispatch(getPosts(posts))
          settingCreator();
+         setPostData({...postData, })
                   },[dispatch, posts])
 
 
@@ -101,8 +103,41 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
  }
 
  
+ //FROM BLOB TO BASE64!
 
+ const convertToB64=(file)=>{
+   return new Promise((resolve, reject)=>{
+     const fileReader= new FileReader();
+     fileReader.readAsDataURL(file);
+     fileReader.onload=()=>{
+       resolve(fileReader.result);
+     };
+     fileReader.onerror=(error)=> reject(error);
+   });
+ };
+ 
+ //Compressing image FILE!!!
+ const compressImage= async(e)=>{
+    const imageFile= e.target.files[0];
+    console.log('original image, instance of Blob', imageFile instanceof Blob);
+    console.log(`original size of original image: ${imageFile.size/1024}kB`);
 
+    const options={
+      maxSizeMB: 0.001,
+      maxWidthorHeight: 1920,
+      useWebWorker: true
+    }
+
+    try {
+      const compressedFile= await imageCompression(imageFile, options);
+      console.log("compressed Image instance of Blob", compressedFile instanceof Blob)
+      console.log(`after compression File size: ${compressedFile.size/1024}kB`);
+      const compressedFileB64= await convertToB64(compressedFile);
+      setPostData({...postData, selectedFile: compressedFileB64});
+    } catch (error) {
+      console.log(error);
+    }
+ }
 
   return (
             <div className='pm-container'>
@@ -163,6 +198,8 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
 
               {/* PostMAKER Form */}
               <h3 className='postmaker'>Post{currentId?'Updater': 'Maker'}</h3>
+
+            
               <form action='http://localhost:5000/posts' noValidate={true} method="post" onSubmit={Submit} autoComplete="false">
                                 
               <h4>
@@ -175,8 +212,13 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
                 Title
                 </h4>
                   <textarea ref={ButnRef} autoComplete='TRON' className='textarea' type="text" name="title" value={postData.title} onChange={(e)=>setPostData({...postData, title: e.target.value.replace('<script>', 'You wont do this NOPE')})}/>
-                
-                  <FileBase className="img-seeker" type='file' multiple={false} onDone={({base64})=>setPostData({...postData, selectedFile: base64})}/>
+                  <h4>
+                  Image
+                </h4>
+          
+                  {/* <FileBase className="img-seeker" type='file' onDone={({base64})=>setPostData({...postData, selectedFile: base64})}/> */}
+                  <input type='file' className="img-seeker" name='file' accept='image/*' onChange={(e)=> compressImage(e) }/>
+
                 <h4>
                   Description
                 </h4>
@@ -232,7 +274,7 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
                 <div className='buttons'>
                   
                   <button type="button"  onClick={clear}>Clear</button>
-                  <button type="submit" disabled={postData.title===''|| postData.des===''||postData.cat===''}>{currentId? 'Update': 'Submit'}</button>
+                  <button type="submit" disabled={postData.title===''|| postData.des===''}>{currentId? 'Update': 'Submit'}</button>
                   {currentId&&<button type="button"  onClick={CancelUpdate}>Cancel update</button> }
                   </div>
 

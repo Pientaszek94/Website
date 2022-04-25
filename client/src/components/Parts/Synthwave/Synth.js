@@ -1,6 +1,7 @@
 import React from 'react';
 import Progress from '../Progress/Progress';
 import './Synth.scss';
+import LazyLoad from "react-lazyload"
 
 function Synth() {
 
@@ -16,7 +17,12 @@ function Synth() {
 
 <h3 className="about-me">about character</h3>
 <p className='bla-bla'> 
+
+<LazyLoad >
 <img src="/images/portret.jpg" alt="portret" className="portret"/>
+
+</LazyLoad>
+
 
     Brought to life in 1994 as Paweł, Who is working on 
     himself by learning new skills, all his life, 
@@ -29,9 +35,9 @@ function Synth() {
 
             <div className="skills">
                 <h3 className="about-me">His skills</h3>
-                <Progress done="90" name="Html"/>
-                <Progress done="70" name="CSS"/>
-                <Progress done="60" name="JavaScript"/>
+                <Progress done="90" name="HTML"/>
+                <Progress done="80" name="CSS/SCSS"/>
+                <Progress done="70" name="JavaScript"/>
                 <Progress done="50" name="React"/>
                 <Progress done="40" name="MERN"/>
                 <Progress done="30" name="Three.js"/>

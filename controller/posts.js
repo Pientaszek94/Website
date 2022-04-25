@@ -4,7 +4,7 @@ import postMessage from "../models/postMessage.js"
 export const getPosts= async(req,res)=>{
 
     try{
-        const postMessages= await postMessage.find();
+        const postMessages= await postMessage.find({likeCount: 0});
         res.status(200).json(postMessages);
     }
     catch(error){

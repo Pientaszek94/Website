@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import './Post.scss'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
 

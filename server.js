@@ -2,6 +2,8 @@ import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
+import compression from 'compression'
+
 import  postRoutes  from './routes/posts.js';
 import downloadRoute from './routes/download.js';
 import usersRoutes from './routes/users.js';
@@ -26,25 +28,18 @@ app.get('/api', (req,res)=>{
 const PORT=process.env.PORT||5000;
 
 // //Serve static assets if in production
-// if(process.env.NODE_ENV==='production')
-// {
-//     //Set static folder
-//     app.use(express.static('client/build'));
-   
-// }
 
-if (process.env.NODE_ENV === "production") {
+
     app.use(express.static('client/build'));
-    
-    app.get('/*', (req, res)=>{
-        res.sendFile(path.join(__dirname,'client/build/index.html'), (err)=>{
-            if(err){
-                res.status(500).send(err)
-            }
-        })
-    });
 
-}
+
+    app.get("*", function (request, response) {
+        response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+      });
+    
+   
+
+
 
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:pwl1994@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})
 .then(app.listen(PORT, ()=>console.log(`THE PORT ${PORT} IS RUNNING!`))).catch((error)=>console.log("YEP...WE ARE DOOMED...and here is what it caused:  ", error.message));

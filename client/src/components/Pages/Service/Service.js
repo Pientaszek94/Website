@@ -54,19 +54,19 @@ let styla={position:"relative" }
                 
                 </div>
                 <div className='service'>
-                <h4 style={{textAlign:"center", margin:'0 auto 0 auto'}}>What do We do, Boss?</h4>
+                <h4 style={{textAlign:"center"}}>What do We do, Boss?</h4>
                 <p>Right so I got Junior Programmer guy, who can do everything you want if it's a frontend job. He can: 
                     <ul style={{listStyleType:'square'}}>
-                        <li> Make Web Application</li>
-                        <li> Advise/Help in building remarkable project</li>
-                        <li> Fix problems with algorithm</li>
+                        <li> Make Web Application;</li>
+                        <li> Advise/Help in building remarkable project;</li>
+                        <li> Fix problems with algorithm;</li>
                     </ul>
                     Last time, I saw him doing some kind of Blog for everyone and it had a synth-retro-like design. Kinda cool.
                     So? What's it gonna be, Boss? 
                 </p>
                 </div>
                 <div>
-                <h4 style={{textAlign:"center", margin:'0 auto 0 auto'}}> Your only way to contact with him</h4>
+                <h4 style={{textAlign:"center", margin:'0 10vw 0 10vw'}}> Your only way to contact with him</h4>
                 <Contact/>
                 </div>
         </div>

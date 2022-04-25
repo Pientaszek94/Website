@@ -1,135 +1,83 @@
 
 .article{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    
-        .article-hero{
-            width: 80vw;
-            height: fit-content;
-
-            .article-img{
-                width: inherit;
-            
-            }
-        
-            .article-title{
-                padding: 10px 20px 10px 20px;
-                margin: 10px 10px 10px 10px;
-                color: white;
-                font: 2vh var(--comp-font);
-                z-index: 1;
-                border: 4px solid white;
-                text-align:center;
-            }
-
-            .article-des{
-                font: 1vh var(--comp-font);
-                padding: 10px 0 10px 0 ;
-                margin: 0 0 0 0;
-                line-height: 1.4vh;
-                text-align: justify;
-                hyphens: auto;
-                
-                &::first-letter{
-                    float: left;
-                    padding: 2px;
-                    font-size: 3vh;
-
-                }
-            }
-        }
-       
-        .article-main{
-            width: 50vw;
-            height: fit-content;
-            
-            .para-title{
-                font-family: var(--comp-font);
-                font-size: 2vh;
-                text-align: center;
-                margin-top: 5vh;
-                line-height: 3vh;
-                color: white;
-                text-transform: uppercase;
-                text-shadow: 4px 4px #ff0000;
-            }
-
-            .article-para{
-                padding-top: 20px;
-                font: 1.5vh FreeMono,monospace;
-                font-weight: light;
-                line-height: 1.7vh;
-                text-align: justify;
-                text-justify: inter-character;
-                color: white;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-                hyphens: auto;
-                word-spacing: 1px;
-            }
-
-        
-        }
-
-
- .author{
-     font: var(--normal-font);
-     font-size: 1vh;
-     margin: 0;
-     padding: 0;
- }
-}
-
-
-@media screen and (max-width: 1200px){
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 
     .article-hero{
+        width: 70vw;
         height: fit-content;
-    
-            .article-img{
-    
-                z-index: 0.5;
-            }
-            .article-title{
-                padding: 10px 20px 10px 20px;
-                margin: 10px 10px 10px 10px;
-                color: white;
-                font: 2vh var(--comp-font);
-                z-index: 1;
-                border: 4px solid white;
-                text-align:justify;
-            }
 
-            .article-des{
-                padding-top: 20px;
-                font: 1.5vh var(--comp-font);
-                line-height: 1.7vh;
-                text-align: justify;
-                color: white;
+        .article-img{
+            width: inherit;
         
-               
-            }
-        
-            
-    }
+        }
     
-    .article-main{
-        width: 90vw;
-       
-        
-    
-    
-        .article-para{
-            padding-top: 20px;
-            font: 2.2vh;
-            text-align: justify;
+        .article-title{
+            padding: 10px 20px 10px 20px;
+            margin: 10px 10px 10px 10px;
             color: white;
+            font: 20px var(--comp-font);
+            z-index: 1;
+            border: 4px solid white;
+            text-align:center;
+        }
+
+        .article-des{
+            font: 15px var(--comp-font);
+            padding: 10px 0 10px 0 ;
+            margin: 0 0 0 0;
+            line-height: 17px;
+            text-align: justify;
+            hyphens: auto;
+            
+            &::first-letter{
+                float: left;
+                padding: 10px;
+                font-size: 50px;
+                color: aquamarine;
+            }
         }
     }
-    
+   
+    .article-main{
+        width: 70vw;
+        height: fit-content;
+        
+        .para-title{
+            font-family: var(--comp-font);
+            font-size: 15px;
+            text-align: center;
+            margin-top: 5vh;
+            line-height: 17px;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 4px 4px #ff0000;
+        }
+
+        .article-para{
+            padding-top: 20px;
+            font: 15px FreeMono,monospace;
+            font-weight: light;
+            line-height: 17px;
+            text-align: justify;
+            text-justify: inter-character;
+            color: white;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            word-spacing: 1px;
+        }
+
     
     }
+
+
+.author{
+ font: var(--normal-font);
+ font-size: 15px;
+ margin: 0;
+ padding: 0;
+}
+}

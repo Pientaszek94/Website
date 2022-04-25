@@ -62,9 +62,9 @@ const [formData, setFormData]=useState(initialState);
                         </button>
                         <div>
                           <div>
-                            <button onClick={switchMode}>
-                                {isSignup? 'Alredy have an account? Sign IN':"Don't have an account? Sign UP"}
-                            </button>
+                            <h6 className='sign' onClick={switchMode}>
+                                {isSignup? 'Alredy have an account? Sign IN!':"Don't have an account? Sign UP!"}
+                            </h6>
                           </div>
                         </div>
                       </form>

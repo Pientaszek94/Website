@@ -87,7 +87,7 @@ function Navbar() {
                                 ):(
                                     <div>
                                         <Link to="/auth">
-                                            <button type='button' onClick={closeMenu}>SIGN IN</button>
+                                            <button type='button' onClick={closeMenu}>SIGN IN to create</button>
                                         </Link>
                                     </div>
 

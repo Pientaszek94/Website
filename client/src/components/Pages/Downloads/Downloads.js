@@ -78,7 +78,7 @@ const [match, setMatch]=useState("");
      }
 
     return (
-            <div>
+            <div className='downloads'> 
                         <div className="canv">
                             
                             <Canvas>
@@ -108,8 +108,8 @@ const [match, setMatch]=useState("");
                                                         <button type="button" onClick={async()=>{
                                                             const res= await fetch('/api/download');
                                                             const blob= await res.blob();
-                                                            download(blob, 'padaka.pdf');
-                                                        }} > Please, Download my CV but it may take a while</button>
+                                                            download(blob, 'resume_Pienta.pdf');
+                                                        }} > Please, Download my CV. It may take few minutes.</button>
 
                                                     
                                                 </div>

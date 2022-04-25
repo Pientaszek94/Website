@@ -1,5 +1,4 @@
 import * as api from '../api/index'
-import emailjs from '@emailjs/browser';
 
 
 

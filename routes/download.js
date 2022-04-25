@@ -6,7 +6,7 @@ const downloadRoute=express.Router();
 //CV
 downloadRoute.get('/', (req,res)=>{
     try {
-        const file = `${__dirname}/dlc/padaka.pdf`;
+        const file = `${__dirname}/client/build/documents/Resume.pdf`;
         res.download(file);
         console.log('here');
       } catch (err) {
