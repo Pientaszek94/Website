@@ -8,7 +8,7 @@ function Post({post}) {
 
   return (
     <div className={`card ${post.cat}`}> 
-                        <div className="card-cap">
+                        <div className="card-cap" loading='lazy'>
                             <img src={post.selectedFile} alt={post.selectedFile} className="card-img"/>
                             <h2 className="card-title">{post.title}</h2>
                             <h5 className='time'>{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</h5>

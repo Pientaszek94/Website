@@ -15,7 +15,7 @@ class HeroSection extends Component {
 
         return (
             <div className='herosec'>
-                <video className="sunrise" src="/videos/CybZach.mp4" muted autoPlay playsInline loop poster=''/>
+                <video className="sunrise" src="/videos/CybZach.mp4" muted autoPlay playsInline loop loading="eager"/>
               <h2 className="title">Good {hour>=12? hour>=16 ? 'Evening': 'Afternoon': 'Night'}{user!==null?(<span>,<br/> <span style={{color: "yellow"}}>{user.result.name}</span></span>): null}!
               <br/>{hour>=6? hour<17? "What have you planned for today?": "How was your day at office?": "Sleep well"}</h2>
             </div>

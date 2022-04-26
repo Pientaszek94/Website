@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux'
 
 import {useDispatch} from "react-redux"
 import { getPosts } from '../../../redux/actions/posts'
+import KITT from '../../Parts/KITT/KITT'
 
 
 
@@ -60,8 +61,11 @@ function Articles() {
                                       }                   
                                     ).sort((a, b)=> a._id<b._id ? 1 : -1).map((post)=>{
                             return(
-                                    <Suspense fallback={<div>LOADING Articles</div>}>
-                                      <Post post={post} key={post._id}/>
+
+                              // HERE Every Article/Post will loading when needed 
+                                    <Suspense fallback={<KITT/>}>
+
+                                           <Post post={post} key={post._id}/>
 
                                     </Suspense>
                                    

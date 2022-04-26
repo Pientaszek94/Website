@@ -1,0 +1,31 @@
+#pre-loader{
+    background-color: rgb(3, 1, 29);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+
+.wait{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 90vh;
+    color: white;
+    font: 30px FreeMono,monospace; 
+    overflow: hidden;
+    animation: 2s loading steps(4) infinite
+}
+
+@keyframes loading {
+    0%{width:120px;}
+    25%{width:140px;}
+    50%{width:160px;}
+    100%{width:170px;}
+}
+

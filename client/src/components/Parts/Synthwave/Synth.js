@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import KITT from '../KITT/KITT';
 import Progress from '../Progress/Progress';
 import './Synth.scss';
 
@@ -17,7 +18,10 @@ function Synth() {
                         <h3 className="about-me">about character</h3>
                         <p className='bla-bla'> 
 
+                        <Suspense fallback={<KITT/>}>
+
                         <img src="/images/portret.jpg" alt="portret" className="portret"/>
+                        </Suspense>
 
                         
 
