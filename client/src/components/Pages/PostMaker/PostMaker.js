@@ -55,7 +55,6 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
 
           dispatch(getPosts(posts))
          settingCreator();
-         setPostData({...postData, })
                   },[dispatch, posts])
 
 
@@ -116,10 +115,9 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
    });
  };
  
- //Compressing image FILE!!!
+ //Compressing image FILE!!! LOSSLESS COMPRESSION COMING SOON!
  const compressImage= async(e)=>{
     const imageFile= e.target.files[0];
-    console.log('original image, instance of Blob', imageFile instanceof Blob);
     console.log(`original size of original image: ${imageFile.size/1024}kB`);
 
     const options={
@@ -129,11 +127,14 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
     }
 
     try {
+
       const compressedFile= await imageCompression(imageFile, options);
-      console.log("compressed Image instance of Blob", compressedFile instanceof Blob)
       console.log(`after compression File size: ${compressedFile.size/1024}kB`);
+
       const compressedFileB64= await convertToB64(compressedFile);
       setPostData({...postData, selectedFile: compressedFileB64});
+
+
     } catch (error) {
       console.log(error);
     }
@@ -151,7 +152,7 @@ const toManagePost=useSelector((state)=>currentId ? state.posts.find((p)=>p._id=
                   <div onClick={clickSM} className={klik?'klikadlo': 'klikadlo-off'}><span>Posts</span></div>
                     <div className='sidebar-content'>
                             <input type="search" value={search} placeholder="find'n'update" onChange={(e)=> setSearch(e.target.value.replace('<script>', 'You wont do this NOPE'))}/>
-                            
+                            <h5>Your articles</h5>
                             <ul className='posts-list'>
                   
                                 {posts.filter((post)=>post.creator===user.result.name).filter((post)=>{

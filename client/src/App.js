@@ -29,12 +29,12 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" exact element={<Home/>}/>
-        <Route path="/about%20me" exact element={<About/>}/>
-        <Route path="/service" exact element={<Service/>}/>
-        <Route path="/articles" exact element={<Articles/>}/>
-        <Route path="/downloads" exact element={<Downloads/>}/>
-        <Route path="/postmaker" exact element={<PostMaker/>}/>
-        <Route path="/auth" exact element={<Auth/>}/>
+        <Route path="/about%20me"  element={<About/>}/>
+        <Route path="/service"  element={<Service/>}/>
+        <Route path="/articles"  element={<Articles/>}/>
+        <Route path="/downloads" element={<Downloads/>}/>
+        <Route path="/postmaker" element={<PostMaker/>}/>
+        <Route path="/auth" element={<Auth/>}/>
         <Route path="/articles/:id" exact element={<FullCard/>}/>
         <Route path="*" exact element={<NoMatch/>}/>
       </Routes>

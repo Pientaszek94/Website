@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './Downloads.scss'
 import {Canvas, useFrame} from "@react-three/fiber";
-import download from 'downloadjs'
+import { Link } from 'react-router-dom';
 
 
 const Box=(props)=>{
@@ -77,6 +77,9 @@ const [match, setMatch]=useState("");
         setMatch("");
      }
 
+
+
+
     return (
             <div className='downloads'> 
                         <div className="canv">
@@ -101,22 +104,19 @@ const [match, setMatch]=useState("");
                                         <div className="prize">
                                             {
                                                 match==="CV"&& 
-                                                <div className>
+                                                <div className='resume'>
                                                     <h4>Congrats! You have unlocked rare item!</h4>
-                                                    {console.log()}
-                                        
-                                                        <button type="button" onClick={async()=>{
-                                                            const res= await fetch('/api/download');
-                                                            const blob= await res.blob();
-                                                            download(blob, 'resume_Pienta.pdf');
-                                                        }} > Please, Download my CV. It may take few minutes.</button>
 
+                                                    <img src="/images/resume.png" alt="QR" className='qr'/>
+                                                        <a href="https://qrco.de/bcyI3V" target='_blank'>
+                                                         Download Resume
+                                                        </a>
                                                     
                                                 </div>
                                             }
                                             {
                                                 match==="BOOK"&&
-                                                <div>Book written by me</div>
+                                                <div><p>I will write a book, someday!</p></div>
                                             }
                                             {
                                                 match==="RICK"&&

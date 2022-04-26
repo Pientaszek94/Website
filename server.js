@@ -23,23 +23,28 @@ app.get('/api', (req,res)=>{
     res.send('Yup. Now you are looking at servers main route')
 })
 
-
+app.use(compression({
+    level: 9
+}))
 
 const PORT=process.env.PORT||5000;
 
+process.env.NODE_ENV="production"
+
 // //Serve static assets if in production
 
-
+if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
-
-
-    app.get("*", function (request, response) {
-        response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-      });
     
-   
+    app.get('*', (req, res)=>{
+        res.sendFile(path.resolve(__dirname,'client/build/index.html'), (err)=>{
+            if(err){
+                res.status(500).send(err)
+            }
+        })
+    });
 
-
+}
 
 mongoose.connect(process.env.MONGODB_URI||'mongodb+srv://pawel123:pwl1994@cluster0.k46cr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser:true, useUnifiedTopology: true})
 .then(app.listen(PORT, ()=>console.log(`THE PORT ${PORT} IS RUNNING!`))).catch((error)=>console.log("YEP...WE ARE DOOMED...and here is what it caused:  ", error.message));

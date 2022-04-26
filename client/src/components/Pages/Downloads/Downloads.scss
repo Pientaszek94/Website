@@ -18,7 +18,7 @@
  text-align: center;
 }
 
-.code h4 {
+.code{
 font-family: var(--comp-font);
 color: white;
 text-transform: uppercase;
@@ -66,10 +66,22 @@ line-height: 25px;
     color: red;
 }
 
+.resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr{
+    width: 200px;
+}
+
 .code a{
     text-decoration: none;
     color: white;
-    animation: blink 1s linear infinite;
+    font-family: var(--comp-font);
+    margin: 30px;
+    animation: blink 3s linear infinite;
 }
 
 @keyframes blink {
