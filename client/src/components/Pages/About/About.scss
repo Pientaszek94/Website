@@ -1,4 +1,129 @@
-.About{
-    background-color: black;
+@import url('https://fonts.googleapis.com/css?family=Saira:700');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
+:root{
+    --norm:  'Saira', sans-serif;
+    --synt:  'Shippori Antique', sans-serif;
+}
 
+.synth-container{
+    position: relative;
+    top: -80px;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+}
+
+.oldvideo{
+    object-fit: cover;
+    height: 70vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.title-a{
+    position: absolute;
+    top: 50vh;
+    background: linear-gradient(to bottom,  #ebf1f6 0%,#abd3ee 50%,#859ee2 51%,#d5ebfb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    perspective: 100px;
+    transition: font-size 1s;
+    text-transform: uppercase;
+    transform: perspective(70px) translateY(-23vh) rotateX(5deg) scale(1);
+    font-family: var(--norm); 
+    text-align: center;
+    line-height: 6vh;
+	font-weight: 1000;
+    font-size: 9vh;
+    text-shadow: 1px -1px 0 rgba(255,255,255,0.5),
+    3px 1px 3px rgba(214, 93, 214, 0.85), 
+    -3px -2px 3px rgba(5, 5, 85, 0.85),
+    1px -2px 0 rgba(116, 98, 98, 0.8);
+    
+}
+
+
+.me{
+    position: relative;
+    top: 0;
+
+}
+
+.about-me{
+font-family: var(--comp-font);
+font-size: 2.7vh;
+text-align: center;
+margin-top: 5vh;
+line-height: 4vh;
+color: white;
+text-transform: uppercase;
+text-shadow: 4px 4px #ff0000;
+
+}
+.portret{
+    float: left;
+width: 15vh;
+display: inline;
+margin-right:  10px;
+}
+.bla-bla{
+float: left;
+display: inline;
+color: white;
+font-family: var(--comp-font);
+font-size: 1.7vh;
+margin-left: 10vw;
+margin-right: 10vw;
+margin-top: 0;
+padding: 0;
+line-height: 3vh;
+text-align: justify;
+text-justify: inter-character;
+color: white;
+-webkit-hyphens: auto;
+-ms-hyphens: auto;
+hyphens: auto;
+word-spacing: 1px;
+}
+
+.skills{
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.list-item{
+    color: white;
+    margin-top: 2vh;
+}
+
+.list-hobbies{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media screen and (max-width: 960px) and (orientation: portrait) {
+
+    .title-a{
+
+        position: absolute;
+        top: 50vh;
+        font-size: 5.0vh;
+        line-height: 5vh;
+    }
+    
 }

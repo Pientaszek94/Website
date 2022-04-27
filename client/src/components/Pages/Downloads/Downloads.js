@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
 import './Downloads.scss'
 import {Canvas, useFrame} from "@react-three/fiber";
-import { Link } from 'react-router-dom';
 
 
 const Box=(props)=>{

@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import * as api from '../api/index'
 
 
 
+
+
 export const signIn=(FormData, navigate)=> async(dispatch)=>{
+
     
+
     try {
 
         const {data}=await api.signIn(FormData);
@@ -14,7 +19,7 @@ export const signIn=(FormData, navigate)=> async(dispatch)=>{
         navigate('/')
 
     } catch (error) {
-        console.log("kalamarnica",error)
+        console.log("Big",error.res.data)
     }
 }
 

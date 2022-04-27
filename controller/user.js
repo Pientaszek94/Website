@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import UserModel from "../models/user.js";
 
 export const signin = async(req,res)=> {
+  
         const {email, password}=req.body; 
         try{ 
             const existingUser= await UserModel.findOne({email});
@@ -20,12 +21,13 @@ export const signin = async(req,res)=> {
                 res.status(200).json({result: existingUser, token})
         }   
         catch(error){
-            res.status(500).json({message:'Something is not right'})
+            res.status(412).json({message:'Something is not right'})
         }
 }
 
 
 export const signup = async(req,res)=> {
+
 
     const {email, password, confirmPassword, firstName, lastName}=req.body;
 

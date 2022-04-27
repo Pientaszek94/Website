@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './styles.scss';
@@ -15,16 +15,22 @@ const initialState={email:'', password:'', confirmPassword:'', firstName:'', las
 const [isSignup, setIsSignup]=useState(false);
 const [formData, setFormData]=useState(initialState);
 
+
+
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-
-    if( isSignup){
-      dispatch(signUp(formData, navigate))
-    }
-    else{
-      dispatch(signIn(formData, navigate))
-    }
-  }
+  
+      
+          if( isSignup){
+            dispatch(signUp(formData, navigate))
+          }
+          else{
+            dispatch(signIn(formData, navigate))
+          }
+        }
+ 
+  
 
   const handleChange=(e)=>{
 
@@ -60,6 +66,7 @@ const [formData, setFormData]=useState(initialState);
                           {isSignup? 'Sign UP':'Sign IN'}
                           
                         </button>
+                  
                         <div>
                           <div>
                             <h6 className='sign' onClick={switchMode}>

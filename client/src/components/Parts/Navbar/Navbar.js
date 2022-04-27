@@ -24,7 +24,7 @@ function Navbar() {
     
         navigate('/');
 
-        console.log(`Logout at`, new Date())
+        console.log(`Logged out at`, new Date())
     
         setUser(null);
       };

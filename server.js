@@ -20,6 +20,7 @@ app.use('/api/users', usersRoutes)
 app.use('/api/download', downloadRoute)
 
 app.get('/api', (req,res)=>{
+    res.set('Access-Control-Allow-Origin', '*')
     res.send('Yup. Now you are looking at servers main route')
 })
 
@@ -28,8 +29,6 @@ app.use(compression({
 }))
 
 const PORT=process.env.PORT||5000;
-
-process.env.NODE_ENV="production"
 
 // //Serve static assets if in production
 
