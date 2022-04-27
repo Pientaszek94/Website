@@ -14,7 +14,7 @@ export const signIn=(FormData, navigate)=> async(dispatch)=>{
         navigate('/')
 
     } catch (error) {
-        console.log(error)
+        console.log("kalamarnica",error)
     }
 }
 

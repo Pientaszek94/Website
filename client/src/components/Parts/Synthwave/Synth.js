@@ -20,7 +20,8 @@ function Synth() {
 
                         <Suspense fallback={<KITT/>}>
 
-                        <img src="/images/portret.jpg" alt="portret" className="portret"/>
+                            <img src="/images/portret.jpg" alt="portret" className="portret"/>
+                            
                         </Suspense>
 
                         
