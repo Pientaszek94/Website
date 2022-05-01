@@ -7,6 +7,8 @@ import imageCompression from 'browser-image-compression'
 
 function PostMaker() {
 
+  document.title="Pwl/PostMaker";
+
   /* This subPage is designed to create or update posts stashed in MongoDB dataBase.
   Currently undergoing modifications. */
 

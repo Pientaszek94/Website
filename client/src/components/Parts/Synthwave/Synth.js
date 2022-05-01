@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
-import KITT from '../../Parts/KITT/KITT';
-import Progress from '../../Parts/Progress/Progress';
-import './About.scss'
+import KITT from '../KITT/KITT';
+import Progress from '../Progress/Progress';
+import './Synth.scss';
 
-function About() {
-    document.title="Pwl/About Me";
+function Synth() {
+
+
     return (
         <div className="synth-container">
                 
@@ -29,6 +30,7 @@ function About() {
                             Brought to life in 1994 as Paweł, Who is working on 
                             himself by learning new skills, all his life, 
                             necessary to accomplish his great goals.
+                            {/*Me? I know who I am! I'm dude, playing a dude, disguised as another dude!*/}
                             Years ago, his only love, beloved Knowledge, gave him Strength and Wisdom.
                             To protect them, He must face numerous enemies such are Bordom, Uncertainty and,
                             most frightening of them all, Error.
@@ -37,10 +39,10 @@ function About() {
                                     <div className="skills">
                                         <h3 className="about-me">His skills</h3>
                                         <Progress done="90" name="HTML"/>
-                                        <Progress done="90" name="CSS/SCSS"/>
-                                        <Progress done="80" name="JavaScript"/>
-                                        <Progress done="75" name="React"/>
-                                        <Progress done="60" name="MERN"/>
+                                        <Progress done="80" name="CSS/SCSS"/>
+                                        <Progress done="70" name="JavaScript"/>
+                                        <Progress done="50" name="React"/>
+                                        <Progress done="40" name="MERN"/>
                                         <Progress done="30" name="Three.js"/>
                                     </div>
                                     <div>
@@ -66,4 +68,4 @@ function About() {
     )
 }
 
-export default About;
+export default Synth;

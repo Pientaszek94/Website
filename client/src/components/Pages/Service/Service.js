@@ -3,6 +3,8 @@ import { Contact } from '../../Parts/Contact/Contact';
 import './Service.scss'
 function Service() {
 
+    document.title="Pwl/Service";
+
     const user = JSON.parse(localStorage.getItem('profile'))!==null? JSON.parse(localStorage.getItem('profile')): null;
 
     const quotes=['Everything is possible', "Do or Do not. There is no try.", "It's what you do right now that makes a difference.", "But I'm the Chosen One.", "Be good.", "You're pretty good."];

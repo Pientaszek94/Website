@@ -18,7 +18,7 @@ function FullCard() {
         <div>
         {posts.filter(post=> post._id===id).map((post)=>{
             
-            document.title=`Pwl=>Articles=>${post.title}`;
+            document.title=`Pwl/Articles/${post.title}`;
            
                 
             return(

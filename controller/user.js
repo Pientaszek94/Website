@@ -10,11 +10,13 @@ export const signin = async(req,res)=> {
         try{ 
             const existingUser= await UserModel.findOne({email});
             if(!existingUser){
-                res.status(404).json({message: 'NO USER WITH THAT EMAIL ADRESS'})
+                res.status(404).json({message: 'NO USER WITH THAT EMAIL ADRESS'});
+                return;
             }
                 const isPasswordCorrect= await bcrypt.compare(password, existingUser.password);
                 if(!isPasswordCorrect){
                     res.status(405).json({message: 'THIS PASSWORD IS NOT VALID'});
+                    return;
                 }
 
                 const token= jwt.sign({email: existingUser.email, id: existingUser._id}, "krufka", {expiresIn:"2h"})
@@ -22,6 +24,7 @@ export const signin = async(req,res)=> {
         }   
         catch(error){
             res.status(412).json({message:'Something is not right'})
+            return;
         }
 }
 
@@ -36,9 +39,11 @@ export const signup = async(req,res)=> {
         const existingUser= await UserModel.findOne({email});
         if(existingUser){
             res.status(400).json({message: 'THAT EMAIL ADRESS IS ALREADY SIGNED UP'});
+            return;
         }
         if(!password===confirmPassword){
             res.status(400).json({message: "passwords don't match"});
+            return;
         }
         const hashedPassword= await bcrypt.hash(password, 12);
         const result= await UserModel.create({email, password: hashedPassword, name:`${firstName} ${lastName}`});
@@ -47,6 +52,7 @@ export const signup = async(req,res)=> {
     }
     catch(error){
         res.status(500).json({message:'Something is not right'})
+        return;
     }
     
 }

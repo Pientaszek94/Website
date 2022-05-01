@@ -3,17 +3,58 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 
-import { signIn, signUp } from '../../../redux/actions/auth';
+import * as api from '../../../redux/api/index'
 import Input from './Input';
 
 
 
 function Auth() {
+
+  document.title="Pwl/Auth";
+
 const navigate=useNavigate();
 const dispatch=useDispatch();
 const initialState={email:'', password:'', confirmPassword:'', firstName:'', lastName:''}
 const [isSignup, setIsSignup]=useState(false);
 const [formData, setFormData]=useState(initialState);
+const [isError, setIsError]=useState(null);
+
+// API SIGNING UP/IN
+
+ const signIn=(FormData, navigate)=> async(dispatch)=>{
+
+  try {
+
+      const {data}=await api.signIn(FormData);
+      dispatch({type: "AUTH", data })
+      
+      console.log("zalogowany");
+
+      navigate('/')
+
+  } catch (error) {
+      setIsError(error);
+      console.log("Big",error.res.data)
+      
+  }
+}
+
+
+ const signUp=(FormData, navigate)=> async(dispatch)=>{
+  
+  try {
+      const {data}=await api.signUp(FormData);
+      dispatch({type: "AUTH", data })
+      console.log("New user is registered")
+      navigate('/postmaker')
+      
+  } catch (error) {
+      setIsError(error);
+      console.log(error)
+      
+  }
+}
+
 
 
 
@@ -27,7 +68,7 @@ const [formData, setFormData]=useState(initialState);
           }
           else{
             dispatch(signIn(formData, navigate))
-          }
+             }
         }
  
   
@@ -66,7 +107,7 @@ const [formData, setFormData]=useState(initialState);
                           {isSignup? 'Sign UP':'Sign IN'}
                           
                         </button>
-                  
+                          {isError?<h6 style={{color:"red"}}>Something went wrong, User.</h6>:null}
                         <div>
                           <div>
                             <h6 className='sign' onClick={switchMode}>

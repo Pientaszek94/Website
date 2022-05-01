@@ -12,7 +12,7 @@ import KITT from '../../Parts/KITT/KITT'
 
 function Articles() {
 
-    document.title="Pwl => Articles";
+    document.title="Pwl/Articles";
 
 
     const Post=React.lazy(()=> import('./Post/Post'))

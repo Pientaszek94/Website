@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './Downloads.scss'
 import {Canvas, useFrame} from "@react-three/fiber";
+import { Link } from 'react-router-dom';
 
 
 const Box=(props)=>{
@@ -28,7 +29,7 @@ return(
 
 
 function Downloads() {
-document.title="Pwl => Downloads";
+document.title="Pwl/Downloads";
 
 const [code, setCode]=useState("");
 
